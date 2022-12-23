@@ -43,29 +43,30 @@
 
     <div class="container mt-5">
 
-        <h1 class="text-warning text-center"> CONTACT</h1>
+        <h1 class="text-warning text-center mb-5"> CONTACT</h1>
         
+        <div class="border rounded border-warning p-5">
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="inputFirstname">Prénom</label>
+                  <label for="inputFirstname" class="text-warning font-weight-bold">Prénom</label>
                   <input type="text" class="form-control" id="inputFirstname" placeholder="John">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputLastname">Nom</label>
+                  <label for="inputLastname" class="text-warning font-weight-bold">Nom</label>
                   <input type="text" class="form-control" id="inputLastname" placeholder="Doe">
                 </div>
             </div>
             <div class="form-row">
               <div class="form-group col-12">
-                <label for="inputEmail4">Email</label>
+                <label for="inputEmail4" class="text-warning font-weight-bold">Email</label>
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
               </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-6">
-                    <label for="subject">Sujet</label>
-                    <select class="form-select mb-3" id="subject" aria-label="select option">
+                    <label for="subject" class="text-warning font-weight-bold">Sujet</label>
+                    <select class="form-select mx-3" id="subject" aria-label="select option">
                       <option selected="">Suggestion</option>
                       <option value="1">Renseignement</option>
                       <option value="2">Réservation</option>
@@ -75,8 +76,8 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group">
-                    <label for="message" class="form-label">Message</label>
+                <div class="form-group col-12">
+                    <label for="message" class="text-warning font-weight-bold">Message</label>
                     <textarea class="form-control" id="message" aria-describedby="messageHelp" placeholder="Votre message"></textarea>
                 </div>
               </div>
@@ -84,6 +85,7 @@
             
             <button type="submit" class="btn btn-warning">Envoyer</button>
           </form>
+          </div>
     </div>
 
     
