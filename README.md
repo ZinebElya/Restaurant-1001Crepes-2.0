@@ -10,7 +10,7 @@ The site is completely responsive with five pages.
 
 - Welcome  
 
->A page with one Jumbotron and two panels to show news (promo, events, etc…​).  
+>A page with Carousel, one Jumbotron and two panels to show news (promo, events, etc…).  
 >![img](https://github.com/ZinebElya/Restaurant-1001Crepes/blob/6b2e9c3ac572062b8fd897a288cdecb9bbf87c83/images/Screenshot_accueil.jpg)
 
 - Menu  
