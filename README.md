@@ -1,6 +1,8 @@
-## Welcome to "1001 Crêpes" 
+## Welcome to "1001 Crêpes"  
 The website of the creperie **"1001 Crêpes"** (site in french):  
 ### https://zinebelya.github.io/Restaurant-1001Crepes/  
+
+![Cover](https://github.com/ZinebElya/Restaurant-1001Crepes/blob/f13baf1dfb9f231fb823e2c413868749810a981a/images/logo%201001crepes.png) 
 
 ## The Restaurant project - Bootstrap-CSS Framework  
 
@@ -29,6 +31,10 @@ The site is completely responsive with five pages.
 
 
 #### Images:  
-[Unsplash](https://unsplash.com/fr) (*Royality free*)
+[Unsplash](https://unsplash.com/fr) (*Royality free*)  
+
+#### Screenshot Mobile:  
+![img]()
+
 
 
