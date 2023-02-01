@@ -47,27 +47,27 @@
     <h1 class="bg-warning text-white text-center mb-5"> CONTACT</h1>
         
       <div class="border rounded border-warning p-5">
-        <form>
+        <form action="submit_form.php" method="POST" >
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputFirstname" class="text-warning font-weight-bold">Prénom</label>
-              <input type="text" class="form-control" id="inputFirstname" placeholder="John">
+              <label for="prenom" class="text-warning font-weight-bold">Prénom</label>
+              <input type="text" class="form-control" id="inputFirstname" name="prenom" placeholder="John" required>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputLastname" class="text-warning font-weight-bold">Nom</label>
-              <input type="text" class="form-control" id="inputLastname" placeholder="Doe">
+              <label for="nom" class="text-warning font-weight-bold">Nom</label>
+              <input type="text" class="form-control" id="inputLastname" name="nom" placeholder="Doe" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-12">
-              <label for="inputEmail4" class="text-warning font-weight-bold">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="johndoe@exemple.com">
+              <label for="email" class="text-warning font-weight-bold">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="johndoe@exemple.com" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-6">
-              <label for="subject" class="text-warning font-weight-bold">Sujet</label>
-                <select class="form-select mx-3" id="subject" aria-label="select option">
+              <label for="sujet" class="text-warning font-weight-bold">Sujet</label>
+                <select class="form-select mx-3" id="subject" name="sujet" aria-label="select option">
                   <option selected="">Suggestions</option>
                   <option value="1">Renseignements</option>
                   <option value="2">Réservations</option>
@@ -79,7 +79,7 @@
           <div class="form-row">
             <div class="form-group col-12">
               <label for="message" class="text-warning font-weight-bold">Message</label>
-              <textarea class="form-control" id="message" aria-describedby="messageHelp" placeholder="Votre message"></textarea>
+              <textarea class="form-control" id="message" aria-describedby="messageHelp" name="message" placeholder="Votre message" required></textarea>
             </div>
           </div>
           <button type="submit" class="btn btn-warning">Envoyer</button>
