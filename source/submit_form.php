@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //préparer la requête d'insertion SQL
         //La méthode prepare() de l'objet $mysqli est utilisée pour préparer la requête SQL
-    $statement = $mysqli->prepare("INSERT INTO clients_messages (Prenom, Nom, Email, Sujets, Message ) VALUES(?, ?, ?, ?, ?)");
+    $statement = $mysqli->prepare("INSERT INTO clients_messages (Prenom, Nom, Email, Sujet, Message ) VALUES(?, ?, ?, ?, ?)");
         /*Le caractère "?" est un paramètre à ligaturer. 
         Ils sont utilisés pour insérer les valeurs dans la requête SQL. 
         Cela aide à protéger contre les attaques par injection SQL en échappant les données entrées par l'utilisateur. */

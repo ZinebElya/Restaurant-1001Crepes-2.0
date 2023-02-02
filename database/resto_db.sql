@@ -33,7 +33,7 @@ CREATE TABLE `clients_messages` (
   `Prenom` varchar(255) NOT NULL,
   `Nom` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Sujets` enum('Suggestions','Renseignements','Reservations','Reclamations','Autres') NOT NULL,
+  `Sujet` enum('Suggestions','Renseignements','Reservations','Reclamations','Autres') NOT NULL,
   `Message` varchar(800) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,7 +41,7 @@ CREATE TABLE `clients_messages` (
 -- Déchargement des données de la table `clients_messages`
 --
 
-INSERT INTO `clients_messages` (`Date`, `Prenom`, `Nom`, `Email`, `Sujets`, `Message`) VALUES
+INSERT INTO `clients_messages` (`Date`, `Prenom`, `Nom`, `Email`, `Sujet`, `Message`) VALUES
 ('2023-02-01', 'zineb', 'elya', 'zineb.elya@mail.com', 'Suggestions', 'Reservation pour 2 le 02/02');
 COMMIT;
 
