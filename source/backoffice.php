@@ -36,6 +36,7 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
     <table class="table table-striped">
         <thead>
           <tr>
+          <th scope="col">ID</th>
             <th scope="col">Date</th>
             <th scope="col">Prenom</th>
             <th scope="col">Nom</th>
@@ -52,12 +53,14 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
       if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {   ////parcourir les résultats de la requête
             echo "<tr>";
-            echo "<th scope='row'>".$row['Date']."</th>";
+            echo "<th scope='row'>".$row['id']."</th>";
+            echo "<td>". $row['Date']. "</td>";
             echo "<td>". $row['Prenom']. "</td>";
             echo "<td>" . $row['Nom']. "</td>";
             echo "<td>". $row['Email']. "</td>";
             echo "<td>". $row['Sujet']. "</td>";
             echo "<td>". $row['Message']. "</td>";
+            echo "<td><a href='delete.php?id=".$row['id']."' class='btn btn-danger'>X</a></td>";
             echo "</tr>";
           }
       } else {

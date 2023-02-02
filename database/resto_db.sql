@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  mer. 01 fév. 2023 à 13:14
+-- Généré le :  jeu. 02 fév. 2023 à 10:54
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clients_messages` (
+  `id` int(11) NOT NULL,
   `Date` date NOT NULL DEFAULT current_timestamp(),
   `Prenom` varchar(255) NOT NULL,
   `Nom` varchar(255) NOT NULL,
@@ -41,8 +42,33 @@ CREATE TABLE `clients_messages` (
 -- Déchargement des données de la table `clients_messages`
 --
 
-INSERT INTO `clients_messages` (`Date`, `Prenom`, `Nom`, `Email`, `Sujet`, `Message`) VALUES
-('2023-02-01', 'zineb', 'elya', 'zineb.elya@mail.com', 'Suggestions', 'Reservation pour 2 le 02/02');
+INSERT INTO `clients_messages` (`id`, `Date`, `Prenom`, `Nom`, `Email`, `Sujet`, `Message`) VALUES
+(1, '2023-02-01', 'zineb', 'elya', 'zineb.elya@mail.com', 'Suggestions', 'Reservation pour 2 le 02/02'),
+(2, '2023-02-01', 'aaa', 'bbb', 'bbb@mail.com', 'Suggestions', 'les heures d&#39;ouvertures'),
+(3, '2023-02-01', 'ddd', 'ccc', 'ccc@gmail.com', 'Suggestions', 'tout va bien'),
+(4, '2023-02-01', 'test', 'connex', 'test@mail.com', 'Suggestions', 'test mysqli'),
+(5, '2023-02-02', 'Adam', 'Achar', 'adam@mail.com', 'Renseignements', 'reservation pour 4 le 04/04'),
+(6, '2023-02-02', 'Samy', 'Samito', 'samy@mail.com', 'Reservations', 'Je veux juste me plaindre');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `clients_messages`
+--
+ALTER TABLE `clients_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `clients_messages`
+--
+ALTER TABLE `clients_messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
