@@ -47,11 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //la méthode execute() est utilisée pour exécuter la requête d'insertion avec les valeurs associées.
     if($statement->execute()){
-        echo "<div class='sucess'>
-            <h3>Bonjour $prenom</h3>
-            <p> Votre message est envoyé.</p>
-            <p>On vous répondra dans les plus bref délai.</p>
-       </div>";
+        header("Location: message_envoye.php");
         }else{
             print $mysqli->error; 
         } 
