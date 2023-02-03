@@ -3,8 +3,7 @@
 include_once("mysqli_connect.php");
 
 
-//la méthode query pour exécuter des requêtes SQL
-$result = $mysqli->query("SELECT * FROM clients_messages");
+
 
 ?>
 
@@ -99,6 +98,9 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
         <tbody>
           
     <?php
+    //la méthode query pour exécuter des requêtes SQL
+$result = $mysqli->query("SELECT * FROM clients_messages");
+
     // vérifier si la requête a réussi en utilisant la méthode num_rows
       if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {   ////parcourir les résultats de la requête
@@ -110,7 +112,7 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
             echo "<td>". $row['Email']. "</td>";
             echo "<td>". $row['Sujet']. "</td>";
             echo "<td>". $row['Message']. "</td>";
-            echo "<td><a href='delete.php?id=".$row['id']."' class='btn btn-danger'>X</a></td>";
+            echo "<td><a href='delete.php?id=".$row['id']."&table=clients_messages' class='btn btn-danger'>X</a></td>";
             echo "</tr>";
           }
       } else {
@@ -168,6 +170,42 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
         
           <button type="submit" class="btn btn-warning" name="upload">Soumettre</button>
         </form>
+
+      <div>
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Nom du fichier</th>
+            <th scope="col">Légende</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <?php
+      //la méthode query pour exécuter des requêtes SQL
+      $result_galerie = $mysqli->query("SELECT * FROM galerie");
+
+      // vérifier si la requête a réussi en utilisant la méthode num_rows
+      if ($result_galerie->num_rows > 0) {
+        while ($row = $result_galerie->fetch_assoc()) {  ////parcourir les résultats de la requête
+            echo "<tr>";
+            echo "<th scope='row'>".$row['id']."</th>";
+            echo "<td>". $row['date']. "</td>";
+            echo "<td>". $row['file_name']. "</td>";
+            echo "<td>" . $row['legende']. "</td>";
+            echo "<td><a href='delete.php?id=".$row['id']."&table=galerie' class='btn btn-danger'>X</a></td>";
+            echo "</tr>";
+          }
+      } else {
+        echo "Aucun résultat trouvé.";
+      }
+      ?>
+        </tbody>
+      </table>
+    </div>
       </div>
       
       </div>

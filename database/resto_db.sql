@@ -82,7 +82,7 @@ COMMIT;
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  ven. 03 fév. 2023 à 15:32
+-- Généré le :  ven. 03 fév. 2023 à 20:22
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -109,9 +109,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `galerie` (
   `id` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
   `file_name` varchar(255) NOT NULL,
+  `extension` varchar(11) NOT NULL,
   `legende` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `galerie`
+--
+
+INSERT INTO `galerie` (`id`, `date`, `file_name`, `extension`, `legende`) VALUES
+(1, '2023-02-03', 'crepe miel.jpg', '', 'crepe miel'),
+(2, '2023-02-03', 'crepe fraise chocolat.jpg', '', 'crepe fraise'),
+(3, '2023-02-03', 'crepe bolo', 'jpg', 'crepe bolognaise');
 
 --
 -- Index pour les tables déchargées
@@ -131,7 +142,7 @@ ALTER TABLE `galerie`
 -- AUTO_INCREMENT pour la table `galerie`
 --
 ALTER TABLE `galerie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
