@@ -72,14 +72,14 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
         </li>
         <li class="list-group-item"  style="border:0;">
           <button class="btn btn-warning text-white font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseHoraires" aria-expanded="false" aria-controls="collapseHoraires">
-            Gallerie 
+            Galerie 
           </button>
         </li>
       </ul>
     </section>
 
     <section>
-      <div class="collapse mb-5" id="collapseHistoire" data-parent="#accordionExample">
+      <div class="collapse show mb-5" id="collapseHistoire" data-parent="#accordionExample">
 
         <h1 class="text-warning text-center">  Messages </h1>
 
@@ -123,7 +123,7 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
     </section>
 
     <section>
-      <div class="collapse show" id="collapseAdresses" data-parent="#accordionExample">
+      <div class="collapse" id="collapseAdresses" data-parent="#accordionExample">
        
         <h1 class="text-warning text-center my-5"> Guest book </h1>
 
@@ -134,7 +134,41 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
     <section>
       <div class="collapse" id="collapseHoraires" data-parent="#accordionExample">
       
-      <h1 class="text-warning text-center"> Gallerie  </h1>
+      <h1 class="text-warning text-center"> Galerie  </h1>
+
+      <div class="border rounded border-warning p-5">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="form-group col-12">
+            <label for="file"></label>
+            <input type="file" id="file" name="file" class="btn btn-warning w-50">
+            </div>
+          </div>
+          <!--
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="idphoto" class="text-warning font-weight-bold">ID Photo</label>
+              <input type="text" class="form-control" id="idphoto" name="idphoto">
+            </div>
+          </div>
+            <div class="form-row">
+            <div class="form-group col-6">
+              <label for="nom_fichier" class="text-warning font-weight-bold">Nom du fichier </label>
+              <input type="text" class="form-control" id="nom_fichier" name="nom_fichier">
+            </div>
+          </div>
+     -->
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="legende" class="text-warning font-weight-bold">Légende </label>
+              <input type="text" class="form-control" id="legende" name="legende">
+            </div>
+          </div>
+         
+        
+          <button type="submit" class="btn btn-warning" name="upload">Soumettre</button>
+        </form>
+      </div>
       
       </div>
     </section>
