@@ -5,7 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Connexion à la base de données
     include_once("mysqli_connect.php");
   
-
     // Définition du répertoire d'upload
     $upload_dir = 'uploads/';
 
@@ -23,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Déplacement du fichier vers le répertoire d'upload
     if (move_uploaded_file($_FILES['file']['tmp_name'], $file_path)) {
         // Insertion des informations dans la table "galerie"
-        $query = "INSERT INTO galerie (file_name, extension, legende) VALUES (?, ?, ?)";
+        $query = "INSERT INTO galerie (FILE, file_name, extension, legende) VALUES (?, ?, ?, ?)";
         $stmt = $mysqli->prepare($query);
-        $stmt->bind_param("sss", $file_base_name, $file_extension, $legende);
+        $stmt->bind_param("ssss", $file_name, $file_base_name, $file_extension, $legende);
         $stmt->execute();
 
         // Vérification de la réussite de la requête d'insertion
