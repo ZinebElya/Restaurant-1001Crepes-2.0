@@ -1,6 +1,5 @@
 <?php
-//inclur la bibliothèque MySQLi
-include_once("mysqli_connect.php");
+include_once("mysqli_connect.php"); 
 ?>
 
 <!DOCTYPE html>
@@ -121,10 +120,7 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
 
     <section>
       <div class="collapse" id="collapseGuestbook" data-parent="#accordionExample">
-       
         <h1 class="text-warning text-center my-5"> Guest book </h1>
-
-       
       </div>
     </section>
 
@@ -134,28 +130,12 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
       <h1 class="text-warning text-center"> Galerie  </h1>
 
       <div class="d-flex  flex-wrap justify-content-center border rounded border-warning p-1">
-<!--
-  <form>
-  <div class="form-group">
-  <button type="file" class="btn btn-primary" name="file" id="file">Choisir un fichier</button>
-  <button type="submit" class="btn btn-primary">Soumettre</button>
-  </div>
-</form>
--->
       <div class="border border-warning p-1 border-opacity-50 rounded-pill w-50">
         <form action="upload.php" method="post" enctype="multipart/form-data" class="text-center">
           <div>
             <label for="file"></label>
             <input type="file" id="file" name="file" class=" w-100">
             </div>
-         <!--
-          <div class="form-row">
-            <div class="form-group col-6">
-              <label for="legende" class="text-warning font-weight-bold">Légende </label>
-              <input type="text" class="form-control" id="legende" name="legende">
-            </div>
-          </div>
-        -->
           <button type="submit" class="btn btn-warning" name="upload">Soumettre</button>
         </form>
       </div>
@@ -180,13 +160,13 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
 
       // vérifier si la requête a réussi en utilisant la méthode num_rows
       if ($result_galerie->num_rows > 0) {
-        while ($row = $result_galerie->fetch_assoc()) {  ////parcourir les résultats de la requête
+        while ($row = $result_galerie->fetch_assoc()) {  //parcourir les résultats de la requête
             echo "<tr>";
             echo "<th scope='row'>".$row['id']."</th>";
             echo "<td>". $row['date']. "</td>";
             echo "<td>". $row['FILE']. "</td>";
             echo "<td>" . $row['file_name']. "</td>";
-            echo "<td><img src='upload/".$row['FILE']."' width='80' height='80'></td>";
+            echo "<td><a href='" . $row["file_path"]. "' target='_blank'><img src='upload/".$row['FILE']."' width='80' height='80'></a></td>";
             echo "<td><a href='delete.php?id=".$row['id']."&table=galerie' class='btn btn-danger'>X</a></td>";
             echo "</tr>";
           }

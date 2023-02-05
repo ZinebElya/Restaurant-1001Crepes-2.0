@@ -76,12 +76,13 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
+
 -- phpMyAdmin SQL Dump
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  Dim 05 fév. 2023 à 20:07
+-- Généré le :  Dim 05 fév. 2023 à 20:41
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -111,19 +112,21 @@ CREATE TABLE `galerie` (
   `date` date NOT NULL DEFAULT current_timestamp(),
   `FILE` varchar(255) NOT NULL,
   `file_name` varchar(255) NOT NULL,
-  `extension` varchar(11) NOT NULL
+  `extension` varchar(11) NOT NULL,
+  `file_path` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `galerie`
 --
 
-INSERT INTO `galerie` (`id`, `date`, `FILE`, `file_name`, `extension`) VALUES
-(2, '2023-02-03', '', 'crepe fraise chocolat.jpg', ''),
-(3, '2023-02-03', '', 'crepe bolo', 'jpg'),
-(4, '2023-02-03', '', 'crepe bueno', 'jpg'),
-(6, '2023-02-03', 'crepe noire .jpg', 'crepe noire ', 'jpg'),
-(7, '2023-02-04', 'crepe champignons.jpg', 'crepe champignons', 'jpg');
+INSERT INTO `galerie` (`id`, `date`, `FILE`, `file_name`, `extension`, `file_path`) VALUES
+(3, '2023-02-03', '', 'crepe bolo', 'jpg', ''),
+(4, '2023-02-03', '', 'crepe bueno', 'jpg', ''),
+(6, '2023-02-03', 'crepe noire .jpg', 'crepe noire ', 'jpg', ''),
+(7, '2023-02-04', 'crepe champignons.jpg', 'crepe champignons', 'jpg', ''),
+(8, '2023-02-05', 'crepe charcuterie.jpg', 'crepe charcuterie', 'jpg', ''),
+(9, '2023-02-05', 'crepe charcuterie.jpg', 'crepe charcuterie', 'jpg', '');
 
 --
 -- Index pour les tables déchargées
@@ -143,7 +146,7 @@ ALTER TABLE `galerie`
 -- AUTO_INCREMENT pour la table `galerie`
 --
 ALTER TABLE `galerie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
