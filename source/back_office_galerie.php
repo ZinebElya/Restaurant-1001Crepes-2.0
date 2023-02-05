@@ -11,7 +11,7 @@ $result_galerie = $mysqli->query("SELECT * FROM galerie");
 if ($result_galerie->num_rows > 0) {
 while ($row = $result_galerie->fetch_assoc()) {   ////parcourir les résultats de la requête
 
-    echo "ID: " .$row["id"]. " - Date: " .$row["date"]. " - Nom du fichier: " . $row["FILE"]. " - Legende: " . $row["file_name"]. "<br>";
+    echo "ID: " .$row["id"]. " - Date: " .$row["date"]. " - Nom du fichier: " . $row["FILE"]. " - Legende: " . $row["file_name"]. " - Chemin du fichier: " . $row["file_path"]. "<br>";
 }        
 } else {
     echo "Aucun résultat trouvé.";

@@ -1,5 +1,4 @@
 <?php
-
 // vérifie que les données proviennent bien d'un formulaire 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -14,24 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   
     include_once("mysqli_connect.php");
-    /*
-     //identifiants mysql
-     $host = "database"; 
-     $username = "root"; 
-     $userpassword = "root"; 
-     $database = "resto_db"; 
-  
-
-    //Ouvrir une nouvelle connexion au serveur MySQL
-    $mysqli = new mysqli($host, $username, $userpassword, $database);
-    //"mysqli" est une extension de PHP qui permet de travailler avec des bases de données MySQL.
-
-    //Afficher toute erreur de connexion
-      //La méthode connect_error de l'objet $mysqli est utilisée pour vérifier s'il y a une erreur de connexion.
-    if ($mysqli->connect_error) {
-        die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-        //Le message d'erreur final aura un format similaire à ceci: Error : (nombre) message d'erreur
-    } */
 
     //préparer la requête d'insertion SQL
         //La méthode prepare() de l'objet $mysqli est utilisée pour préparer la requête SQL
@@ -47,15 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //la méthode execute() est utilisée pour exécuter la requête d'insertion avec les valeurs associées.
     if($statement->execute()){
-        echo "<div class='sucess'>
-            <h3>Bonjour $prenom</h3>
-            <p> Votre message est envoyé.</p>
-            <p>On vous répondra dans les plus bref délai.</p>
-       </div>";
+        include 'message_envoye.php';
+       header("Location: message_envoye.php");
         }else{
             print $mysqli->error; 
         } 
-
   }
-
 ?>

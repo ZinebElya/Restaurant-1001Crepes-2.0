@@ -22,14 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Déplacement du fichier vers le répertoire d'upload
     if (move_uploaded_file($_FILES['file']['tmp_name'], $file_path)) {
         // Insertion des informations dans la table "galerie"
-        $query = "INSERT INTO galerie (FILE, file_name, extension) VALUES (?, ?, ?)";
+        $query = "INSERT INTO galerie (FILE, file_name, extension, file_path ) VALUES (?, ?, ?, ?)";
         $stmt = $mysqli->prepare($query);
-        $stmt->bind_param("sss", $file_name, $file_base_name, $file_extension);
+        $stmt->bind_param("ssss", $file_name, $file_base_name, $file_extension, $file_path);
         $stmt->execute();
 
         // Vérification de la réussite de la requête d'insertion
         if ($stmt->affected_rows > 0) {
             echo "L'image a été téléchargée avec succès.";
+            echo "<br><a href='" . $file_path . "' target='_blank'>Aperçu</a>";
         } else {
             echo "Une erreur est survenue lors de l'insertion des données.";
         }
