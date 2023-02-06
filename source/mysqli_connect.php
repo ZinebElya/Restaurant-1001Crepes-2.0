@@ -13,5 +13,8 @@
         die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
        
     } 
+
+  // Définir le jeu de caractères utf8 pour la connexion à la base de données
+  $mysqli->set_charset("utf8");
     
 ?>
