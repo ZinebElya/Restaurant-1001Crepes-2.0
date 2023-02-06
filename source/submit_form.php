@@ -28,7 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //la méthode execute() est utilisée pour exécuter la requête d'insertion avec les valeurs associées.
     if($statement->execute()){
-        include 'message_envoye.php';
+        session_start();
+        $_SESSION['prenom'] = $prenom; // enregistrer la variable $prenom dans une session 
        header("Location: message_envoye.php");
         }else{
             print $mysqli->error; 

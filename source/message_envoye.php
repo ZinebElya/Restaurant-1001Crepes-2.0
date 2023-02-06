@@ -1,7 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$prenom = trim(filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING));
-};
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,7 +49,8 @@ $prenom = trim(filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING));
   <div class="container my-5 w-50">
     <div class="card m-5 p-5">
           <div class="card-body m5 p-5 font-weight-bold">
-            <h3 class="card-title text-center text-warning">Bonjour<?php  echo $prenom ; ?>
+            <h3 class="card-title text-center text-warning">Bonjour
+            <?php echo $_SESSION['prenom'];?>
             </h3>
             <p class="card-text text-center"> Votre message est envoyé. </p>
             <p class="card-text text-center"> On vous répondra dans les plus brefs délais.</p>
