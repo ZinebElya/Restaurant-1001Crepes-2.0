@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  jeu. 02 fév. 2023 à 10:54
+-- Généré le :  lun. 06 fév. 2023 à 11:32
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -31,24 +31,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `clients_messages` (
   `id` int(11) NOT NULL,
   `Date` date NOT NULL DEFAULT current_timestamp(),
-  `Prenom` varchar(255) NOT NULL,
-  `Nom` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Sujet` enum('Suggestions','Renseignements','Reservations','Reclamations','Autres') NOT NULL,
-  `Message` varchar(800) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `clients_messages`
---
-
-INSERT INTO `clients_messages` (`id`, `Date`, `Prenom`, `Nom`, `Email`, `Sujet`, `Message`) VALUES
-(1, '2023-02-01', 'zineb', 'elya', 'zineb.elya@mail.com', 'Suggestions', 'Reservation pour 2 le 02/02'),
-(2, '2023-02-01', 'aaa', 'bbb', 'bbb@mail.com', 'Suggestions', 'les heures d&#39;ouvertures'),
-(3, '2023-02-01', 'ddd', 'ccc', 'ccc@gmail.com', 'Suggestions', 'tout va bien'),
-(4, '2023-02-01', 'test', 'connex', 'test@mail.com', 'Suggestions', 'test mysqli'),
-(5, '2023-02-02', 'Adam', 'Achar', 'adam@mail.com', 'Renseignements', 'reservation pour 4 le 04/04'),
-(6, '2023-02-02', 'Samy', 'Samito', 'samy@mail.com', 'Reservations', 'Je veux juste me plaindre');
+  `Prenom` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `Nom` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `Sujet` enum('Suggestions','Renseignements','Reservations','Reclamations','Autres') COLLATE utf8_unicode_ci NOT NULL,
+  `Message` varchar(1000) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -68,7 +56,7 @@ ALTER TABLE `clients_messages`
 -- AUTO_INCREMENT pour la table `clients_messages`
 --
 ALTER TABLE `clients_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -77,12 +65,14 @@ COMMIT;
 
 
 
+
+
 -- phpMyAdmin SQL Dump
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  Dim 05 fév. 2023 à 20:41
+-- Généré le :  lun. 06 fév. 2023 à 11:44
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -110,23 +100,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `galerie` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL DEFAULT current_timestamp(),
-  `FILE` varchar(255) NOT NULL,
-  `file_name` varchar(255) NOT NULL,
-  `extension` varchar(11) NOT NULL,
-  `file_path` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `galerie`
---
-
-INSERT INTO `galerie` (`id`, `date`, `FILE`, `file_name`, `extension`, `file_path`) VALUES
-(3, '2023-02-03', '', 'crepe bolo', 'jpg', ''),
-(4, '2023-02-03', '', 'crepe bueno', 'jpg', ''),
-(6, '2023-02-03', 'crepe noire .jpg', 'crepe noire ', 'jpg', ''),
-(7, '2023-02-04', 'crepe champignons.jpg', 'crepe champignons', 'jpg', ''),
-(8, '2023-02-05', 'crepe charcuterie.jpg', 'crepe charcuterie', 'jpg', ''),
-(9, '2023-02-05', 'crepe charcuterie.jpg', 'crepe charcuterie', 'jpg', '');
+  `FILE` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `file_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `extension` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `file_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -146,7 +124,7 @@ ALTER TABLE `galerie`
 -- AUTO_INCREMENT pour la table `galerie`
 --
 ALTER TABLE `galerie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

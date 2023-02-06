@@ -129,7 +129,7 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
       
       <h1 class="text-warning text-center"> Galerie  </h1>
 
-      <div class="d-flex  flex-wrap justify-content-center border rounded border-warning p-1">
+      <div class="d-flex  flex-column justify-content-center border rounded border-warning p-1">
       <div class="border border-warning p-1 border-opacity-50 rounded-pill w-50">
         <form action="upload.php" method="post" enctype="multipart/form-data" class="text-center">
           <div>
