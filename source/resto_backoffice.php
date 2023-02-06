@@ -47,12 +47,12 @@ include_once("mysqli_connect.php");
     </div>
   </nav>
 
-  <div class="container my-3 bg-white ">
+  <div class="container my-1 bg-white">
 
-    <div class="accordion my-5" id="accordionExample">
+    <div class="accordion" id="accordionExample">
 
     <section>
-      <ul class="list-group list-group-horizontal justify-content-center my-5">
+      <ul class="list-group list-group-horizontal justify-content-center my-3">
         <li class="list-group-item"  style="border:0;" >
           <button class="btn btn-warning text-white font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseMessage" aria-expanded="false" aria-controls="collapseMessage">
             Messages
@@ -76,7 +76,7 @@ include_once("mysqli_connect.php");
 
         <h1 class="text-warning text-center">  Messages </h1>
 
-        <table class="table table-striped">
+        <table class="table table-striped table-warning my-5">
         <thead>
           <tr>
           <th scope="col">ID</th>
@@ -93,11 +93,11 @@ include_once("mysqli_connect.php");
           
     <?php
     //la méthode query pour exécuter des requêtes SQL
-$result = $mysqli->query("SELECT * FROM clients_messages");
+    $result_message = $mysqli->query("SELECT * FROM clients_messages");
 
     // vérifier si la requête a réussi en utilisant la méthode num_rows
-      if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {   ////parcourir les résultats de la requête
+      if ($result_message->num_rows > 0) {
+          while ($row = $result_message->fetch_assoc()) {   ////parcourir les résultats de la requête
             echo "<tr>";
             echo "<th scope='row'>".$row['id']."</th>";
             echo "<td>". $row['Date']. "</td>";
@@ -129,18 +129,18 @@ $result = $mysqli->query("SELECT * FROM clients_messages");
       
       <h1 class="text-warning text-center"> Galerie  </h1>
 
-      <div class="d-flex  flex-column justify-content-center border rounded border-warning p-1">
-      <div class="border border-warning p-1 border-opacity-50 rounded-pill w-50">
+      <div class="d-flex  flex-column  align-items-center border rounded border-warning p-1">
+      <div class="d-flex justify-content-center  border border-warning p-1 border-opacity-50 rounded-pill w-50 bg-warning mt-4">
         <form action="upload.php" method="post" enctype="multipart/form-data" class="text-center">
-          <div>
+          <div class="mb-3">
             <label for="file"></label>
             <input type="file" id="file" name="file" class=" w-100">
             </div>
-          <button type="submit" class="btn btn-warning" name="upload">Soumettre</button>
+          <button type="submit" class="btn btn-light" name="upload">Soumettre</button>
         </form>
       </div>
 
-      <div class="my-5">
+      <div class="my-5 w-100">
         <table class="table table-striped">
         <thead>
           <tr>
