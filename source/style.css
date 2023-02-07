@@ -2,11 +2,13 @@
     background-image: url("./images/bg-image1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 #bg2 {
     background-image: url("./images/bg-image2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 

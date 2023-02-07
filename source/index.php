@@ -14,35 +14,9 @@
 
 <body id="bg1">
 
-  <nav class="navbar navbar-expand-md p-0 navbar-light bg-white shadow sticky-top">
-    <div class="container-fluid ">
-      <a class="navbar-brand mx-0" href="./index.html"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between " id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./index.html">Accueil <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./menu.html">Menu</a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./photos.html">Photos</a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./apropos.html">A propos</a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include("navbar.php"); ?>
 
-  <div class="container w-50 mt-5">
+  <div class="container w-50  mt-5">
 
   <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -54,7 +28,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./images/Variation de crêpes.jpg" class="d-block w-100 h-50" alt="Variation de crêpes">
+          <img src="./images/Variation de crêpes.jpg" class="d-block w-100" alt="Variation de crêpes">
         </div>
         <div class="carousel-item">
           <img src="./images/Roulé de crêpes salées au saumon fumé et fromage frais.jpg" class="d-block w-100" alt="Roulé de crêpes salées au saumon fumé et fromage frais">
@@ -76,7 +50,9 @@
         </a>
     </div>
   </section>
+  </div>
 
+  <div class="container mt-5">
   <section>
     <div class="jumbotron my-3">
       <div class="bg-light">
@@ -129,16 +105,7 @@
   </section>
   
   </div>
-
-  <footer class="card-footer bg-light">
-    <div class="container-fluid">
-      <div class="d-flex  mx-1">
-        <div class="p-2 flex-grow-1 "><i class="fa-regular fa-copyright"></i><small> Copyright - 1001Crêpes</small></div>
-        <div class="p-2"><a class="nav-item nav-link text-dark "  href="#"><i class="fa-brands fa-facebook"></i></a></div>
-        <div class="p-2"><a class="nav-item nav-link text-dark" href="#"><i class="fa-brands fa-instagram"></i></a></div>
-      </div>
-    </div>
-  </footer>
+  <?php include("footer.php"); ?>
     
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
