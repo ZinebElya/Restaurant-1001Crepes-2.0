@@ -59,8 +59,8 @@ include_once("mysqli_connect.php");
           </button>
         </li>
         <li class="list-group-item"  style="border:0;" >
-          <button class="btn btn-warning text-white font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseGuestbook" aria-expanded="false" aria-controls="collapseGuestbook">
-          Guest book
+          <button class="btn btn-warning text-white font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
+          Menu
           </button>
         </li>
         <li class="list-group-item"  style="border:0;">
@@ -119,8 +119,8 @@ include_once("mysqli_connect.php");
     </section>
 
     <section>
-      <div class="collapse" id="collapseGuestbook" data-parent="#accordionExample">
-        <h1 class="text-warning text-center my-5"> Guest book </h1>
+      <div class="collapse" id="collapseMenu" data-parent="#accordionExample">
+        <h1 class="text-warning text-center my-5"> Menu </h1>
       </div>
     </section>
 
