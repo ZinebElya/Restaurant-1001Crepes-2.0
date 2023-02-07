@@ -130,10 +130,10 @@ include_once("mysqli_connect.php");
           </div>
           <div class="form-group col-md-8">
             <select class="form-select w-100" id="categorie" name="categorie" aria-label="select option">
-                <option value='crepes-salees'>Crêpes salées</option>
-                <option value='crepes-sucrees'>Crêpes sucrées</option>
-                <option value='milk-shakes'>Milk-shakes </option>
-                <option value='boissons-chaudes'>Boissons chaudes</option>
+                <option value='Crêpes salées'>Crêpes salées</option>
+                <option value='Crêpes sucrées'>Crêpes sucrées</option>
+                <option value='Milk-shakes'>Milk-shakes </option>
+                <option value='Boissons chaudes'>Boissons chaudes</option>
             </select>
           </div>
         </div>
