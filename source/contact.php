@@ -47,7 +47,6 @@
                   <option value='Reservations'>Réservations</option>
                   <option value='Reclamations'>Réclamations</option>
                   <option value='Autres'>Autres</option>
-                  
                 </select>
             </div>
           </div>

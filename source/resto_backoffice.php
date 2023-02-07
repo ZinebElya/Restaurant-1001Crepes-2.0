@@ -9,7 +9,6 @@ include_once("mysqli_connect.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://kit.fontawesome.com/f18291f973.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
@@ -20,7 +19,7 @@ include_once("mysqli_connect.php");
   
 <nav class="navbar navbar-expand-xxl p-0 navbar-light bg-white shadow ">
     <div class="container-fluid ">
-      <a class="navbar-brand mx-0" href="./index.html"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
+      <a class="navbar-brand mx-0" href="./index.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
       <a href="resto_backoffice.php"><h1 class="text-warning text-center  mb-5">Back Office</h1></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,19 +27,19 @@ include_once("mysqli_connect.php");
       <div class="collapse navbar-collapse justify-content-between " id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./index.html">Accueil <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-warning" href="./index.php">Accueil <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./menu.html">Menu</a>
+            <a class="nav-link text-warning" href="./menu.php">Menu</a>
           </li>
           <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./photos.html">Photos</a>
+            <a class="nav-link text-warning" href="./photos.php">Photos</a>
           </li>
           <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./apropos.html">A propos</a>
+            <a class="nav-link text-warning" href="./apropos.php">A propos</a>
           </li>
           <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./contact.html">Contact</a>
+            <a class="nav-link text-warning" href="./contact.php">Contact</a>
           </li>
         </ul>
       </div>
@@ -74,7 +73,7 @@ include_once("mysqli_connect.php");
     <section>
       <div class="collapse mb-5" id="collapseMessage" data-parent="#accordionExample">
 
-        <h1 class="text-warning text-center">  Messages </h1>
+        <h2 class="text-warning text-center">  Messages des clients  </h2>
 
         <table class="table table-striped table-warning my-5">
         <thead>
@@ -120,14 +119,90 @@ include_once("mysqli_connect.php");
 
     <section>
       <div class="collapse" id="collapseMenu" data-parent="#accordionExample">
-        <h1 class="text-warning text-center my-5"> Menu </h1>
+        <h2 class="text-warning text-center my-5"> Menu </h2>
+
+        <div class="d-flex  flex-column  align-items-center border rounded border-warning p-1">
+      <div class="d-flex justify-content-center  border border-warning p-1 border-opacity-50 rounded-pill w-75 bg-warning mt-4">
+        <form method="POST" action="submit_menu.php" class="w-75 text-center">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+          <label for="categorie">Catégorie</label>
+          </div>
+          <div class="form-group col-md-8">
+            <select class="form-select w-100" id="categorie" name="categorie" aria-label="select option">
+                <option value='crepes-salees'>Crêpes salées</option>
+                <option value='crepes-sucrees'>Crêpes sucrées</option>
+                <option value='milk-shakes'>Milk-shakes </option>
+                <option value='boissons-chaudes'>Boissons chaudes</option>
+            </select>
+          </div>
+        </div>
+          
+          <div class="form-row">  
+          <div class="form-group col-md-4">    
+          <label for="nom_produit">Nom du produit</label>
+          </div>
+          <div class="form-group col-md-8"> 
+          <input type="text" id="nom" name="nom_produit" class="w-100" required>
+          </div>
+          </div>
+
+          <div class="form-row">
+          <div class="form-group col-md-4">
+          <label for="prix">Prix</label>
+          </div>
+          <div class="form-group col-md-8">
+          <input type="text" id="prix" name="prix" class="w-100" required>
+          </div>
+          </div>
+          <input type="submit" name="ajouter" value="Ajouter" class="btn btn-light">
+        </form>
+        </div>
+
+        <div class="my-5 w-100">
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID_Produit</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Nom du Produit</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+        include_once("mysqli_connect.php");
+
+        $result_menu = $mysqli->query("SELECT * FROM menu");
+
+        if ($result_menu->num_rows > 0) {
+        while ($row = $result_menu->fetch_assoc()) {  
+          echo "<tr>";
+          echo "<th scope='row'>".$row['id']."</th>";
+          echo "<td>". $row['categorie']. "</td>";
+          echo "<td>". $row['nom_produit']. "</td>";
+          echo "<td>" . $row['prix']. "</td>";
+          echo "<td></td>";
+          echo "<td><a href='delete.php?id=".$row['id']."&table=menu' class='btn btn-danger'>X</a></td>";
+          echo "</tr>";
+        }        
+        } else {
+           echo "Aucun résultat trouvé.";
+        }
+        ?>
+        </tbody>
+      </table>
+        </div>
+      </div>
       </div>
     </section>
 
     <section>
       <div class="collapse" id="collapseGalerie" data-parent="#accordionExample">
       
-      <h1 class="text-warning text-center"> Galerie  </h1>
+      <h2 class="text-warning text-center"> Galerie </h2>
 
       <div class="d-flex  flex-column  align-items-center border rounded border-warning p-1">
       <div class="d-flex justify-content-center  border border-warning p-1 border-opacity-50 rounded-pill w-50 bg-warning mt-4">
@@ -136,7 +211,7 @@ include_once("mysqli_connect.php");
             <label for="file"></label>
             <input type="file" id="file" name="file" class=" w-100">
             </div>
-          <button type="submit" class="btn btn-light" name="upload">Soumettre</button>
+          <button type="submit" class="btn btn-light" name="upload">Télécharger</button>
         </form>
       </div>
 

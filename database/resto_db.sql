@@ -131,13 +131,12 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-
 -- phpMyAdmin SQL Dump
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  lun. 06 fév. 2023 à 13:27
+-- Généré le :  mar. 07 fév. 2023 à 17:15
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -164,40 +163,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `menu` (
   `id` int(11) NOT NULL,
-  `categorie` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `prix` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Déchargement des données de la table `menu`
---
-
-INSERT INTO `menu` (`id`, `catgorie`, `titre`, `prix`) VALUES
-(1, 'Crêpes salées', 'Roulé de crêpes au saumon fumé et fromage frais', 8),
-(2, 'Crêpes salées', 'Crêpes à la farine de sarrasin, œuf et lardons', 7),
-(3, 'Crêpes salées', 'Crêpes aux épinards, saumon et avocat', 8),
-(4, 'Crêpes salées', 'Crêpes aux asperges, œuf mollet et sauce hollandaise', 8),
-(5, 'Crêpes salées', 'Crêpes au poulet et champignons de Paris', 9),
-(6, 'Crêpes salées', 'Crêpes roulées à la Mexicaine poulet fromage', 9),
-(17, ' Crêpes sucrées', 'Gâteau de crêpes chocolat banane', 7),
-(18, ' Crêpes sucrées', 'Crêpes roulées à la confiture de baies fraîches', 7),
-(19, ' Crêpes sucrées', 'Crêpes roulées façon tiramisu', 8),
-(20, ' Crêpes sucrées', 'Crêpes à la fleur d\'oranger et la crème de citron maison', 7),
-(21, ' Crêpes sucrées', 'Crêpes au thé matcha', 9),
-(22, ' Crêpes sucrées', 'Gâteau de crêpes à la noix de coco et éclats de pistaches', 9),
-(23, ' Crêpes sucrées', 'Sucette de crêpes roulées cacao vanille', 8),
-(24, ' Crêpes sucrées', 'Crêpes vegan et sans gluten au caramel de dattes et noix', 10),
-(25, 'Milk-shakes ', 'Milk-shake fraise', 5),
-(26, 'Milk-shakes ', 'Milk-shake kiwi et menthe', 6),
-(27, 'Milk-shakes ', 'Milk-shake tonique aux fruits frais et au yaourt bio', 8),
-(28, 'Milk-shakes ', 'Milk-shake banane amande avec des flocons d\'avoine', 9),
-(29, 'Milk-shakes ', 'Milk-shake banane agrumes', 7),
-(30, 'Boissons chaudes', 'Espresso', 2),
-(31, 'Boissons chaudes', 'Capuccino', 4),
-(32, 'Boissons chaudes', 'Café au lait', 3),
-(33, 'Boissons chaudes', 'Chocolat chaud', 4),
-(34, 'Boissons chaudes', 'Thé', 2);
+  `categorie` enum('crepes-salees','crepes-sucrees','milk-shakes','boissons-chaudes') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_produit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -217,7 +186,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT pour la table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
