@@ -20,225 +20,51 @@
   <div class="container my-5">
 
     <h1 class="bg-warning text-white text-center"> LE MENU </h1>
-    
-    <div class="accordion my-5" id="accordionExample">
 
-    <section>
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button class="btn text-warning font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Crêpes salées
-            </button>
-          </h2>
-        </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Roulé de crêpes au saumon fumé et fromage frais</span> 
-                  <span class="badge badge-warning badge-pill">8€</span>
+    <div class="accordion my-5" id="accordionExample">
+  
+    <?php
+    include_once("mysqli_connect.php");
+    $result_menu = $mysqli->query("SELECT * FROM menu");
+
+    // Tableau pour stocker les informations sur les produits
+    $products = array();
+    while ($row = $result_menu->fetch_assoc()) {  
+     $products[] = $row;
+    }
+
+// Génération du code HTML pour afficher le menu
+$current_categorie = '';
+$i = 1;
+foreach ($products as $product) {
+    if ($product['categorie'] != $current_categorie) {
+        if ($current_categorie != '') {
+            echo '</div></div></div>';
+        }
+        echo '<div class="card">
+                <div class="card-header" id="heading' . $i . '">
+                  <h2 class="mb-0">
+                    <button class="btn text-warning font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse' . $i . '" aria-expanded="false" aria-controls="collapse' . $i . '">
+                    ' . $product['categorie'] . '
+                    </button>
+                  </h2>
                 </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes à la farine de sarrasin, œuf et lardons</span> 
-                  <span class="badge badge-warning badge-pill">7€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes aux épinards, saumon et avocat</span> 
-                  <span class="badge badge-warning badge-pill">8€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes aux asperges, œuf mollet et sauce hollandaise</span> 
-                  <span class="badge badge-warning badge-pill">8€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes au poulet et champignons de Paris</span> 
-                  <span class="badge badge-warning badge-pill">9€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes roulées à la Mexicaine poulet fromage</span> 
-                  <span class="badge badge-warning badge-pill">9€</span>
-                </div>
-              </li>
-            </ul>                
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h2 class="mb-0">
-            <button class="btn text-warning font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Crêpes sucrées
-            </button>
-          </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Gâteau de crêpes chocolat banane</span> 
-                  <span class="badge badge-warning badge-pill">7€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes roulées à la confiture de baies fraîches</span> 
-                  <span class="badge badge-warning badge-pill">7€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes roulées façon tiramisu</span> 
-                  <span class="badge badge-warning badge-pill">8€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes à la fleur d'oranger et la crème de citron maison</span> 
-                  <span class="badge badge-warning badge-pill">7€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes au thé matcha</span> 
-                  <span class="badge badge-warning badge-pill">9€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Gâteau de crêpes à la noix de coco et éclats de pistaches</span> 
-                  <span class="badge badge-warning badge-pill">9€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Sucette de crêpes roulées cacao vanille</span> 
-                  <span class="badge badge-warning badge-pill">8€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Crêpes vegan et sans gluten au caramel de dattes et noix</span> 
-                  <span class="badge badge-warning badge-pill">€10</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h2 class="mb-0">
-            <button class="btn text-warning font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Milk-shakes <span class="badge badge-danger">New</span>
-            </button>
-          </h2>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Milk-shake fraise</span> 
-                <span class="badge badge-warning badge-pill">5€</span>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                  <span>Milk-shake kiwi et menthe </span> 
-                  <span class="badge badge-warning badge-pill">6€</span>
-                </div>
-            </li>
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Milk-shake tonique aux fruits frais et au yaourt bio</span> 
-                <span class="badge badge-warning badge-pill">8€</span>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Milk-shake banane amande avec des flocons d'avoine</span> 
-                <span class="badge badge-warning badge-pill">9€</span>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Milk-shake banane agrumes</span> 
-                <span class="badge badge-warning badge-pill">7€</span>
-              </div>
-            </li>
-          </ul>                
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section>
-      <div class="card">
-        <div class="card-header" id="headingFour">
-          <h2 class="mb-0">
-            <button class="btn text-warning font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Boissons chaudes
-            </button>
-          </h2>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Espresso</span> 
-                  <span class="badge badge-warning badge-pill">2€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Capuccino </span> 
-                  <span class="badge badge-warning badge-pill">4€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Café au lait</span> 
-                  <span class="badge badge-warning badge-pill">3€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Chocolat chaud</span> 
-                  <span class="badge badge-warning badge-pill">4€</span>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span>Thé</span> 
-                  <span class="badge badge-warning badge-pill">2€</span>
-                </div>
-              </li>
-            </ul>                
-          </div>
-        </div>
-      </div>
-    </section> 
-    </div>
+                <div id="collapse' . $i . '" class="collapse" aria-labelledby="heading' . $i . '" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul class="list-group list-group-flush">';
+        $current_categorie = $product['categorie'];
+        $i++;
+    }
+    echo '<li class="list-group-item">
+            <div class="d-flex justify-content-between align-items-center">
+              <span>' . $product['nom_produit'] . '</span> 
+              <span class="badge badge-warning badge-pill">' . $product['prix'] . '€</span>
+            </div>
+          </li>';
+}
+echo '</ul></div></div></div>';
+?>
+  </div>
     
   </div>
   <?php include("footer.php"); ?>
