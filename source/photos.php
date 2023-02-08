@@ -1,3 +1,7 @@
+<?php
+include_once("mysqli_connect.php"); 
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,43 +15,36 @@
 
   <title>Photos</title>
 </head>
-
 <body id="bg1">
-
 <?php include("navbar.php"); ?>
 
   <div class="container my-5">
     <h1 class="bg-warning text-white text-center"> PHOTOS </h1>
   </div>
-  
-    <section>
-      <div class="gallery justify-content-center d-flex my-5">
-        <div class="row">
-          <div class="col-12 col-lg-4">
-            <img src= "./images/crêpes aux épinards, saumon, avocat et cream cheese.jpg" alt="crêpes aux épinards, saumon, avocat et cream cheese"  class="d-block w-100 my-5">
-          </div>
-          <div class="col-12 col-lg-4">
-            <img src="./images/Crêpes salées au poulet et champignons de Paris.jpg" alt="Crêpes salées au poulet et champignons de Paris" class="d-block w-100 my-5">
-          </div>
-          <div class="col-12 col-lg-4">
-            <img src="./images/Crêpes aux asperges, œuf mollet et sauce hollandaise.jpg" alt="Crêpes aux asperges, œuf mollet et sauce hollandaise" class="d-block w-100 my-5">
-          </div>
-        </div>
-      </div>
+  <section>
+  <div class="gallery justify-content-center d-flex my-5">
+    <div class="row">
+    <?php
+    include("add_image.php");
+?>  
+    </div>
+    </div>
     </section>
 
-    <section>
-          <ul class="pagination justify-content-center my-5">
-            <li class="page-item"><a class="page-link border border-warning bg-warning text-white" href="#" disabled>Previous</a></li>
-            <li class="page-item active"><a class="page-link border border-warning text-warning " href="#">1</a></li>
-            <li class="page-item"><a class="page-link border border-warning text-warning" href="./photos2.html">2</a></li>
-            <li class="page-item"><a class="page-link border border-warning  text-warning" href="./photos3.html">3</a></li>
-            <li class="page-item"><a class="page-link border border-warning  text-warning" href="./photos4.html">4</a></li>
-            <li class="page-item"><a class="page-link border border-warning bg-warning text-white" href="./photos2.html">Next</a></li>
-          </ul>
-    </section>
+    <section id="pagination">
+  <ul class="pagination justify-content-center my-5">
+    <li class="page-item <?php echo $page <= 1 ? 'disabled' : ''; ?>"><a class="page-link border border-warning bg-warning text-white" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
+    <?php for ($i = 1; $i <= $numberOfPages; $i++): ?>
+      <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+        <a class="page-link border border-warning text-warning" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+      </li>
+    <?php endfor; ?>
+    <li class="page-item <?php echo $page >= $numberOfPages ? 'disabled' : ''; ?>"><a class="page-link border border-warning bg-warning text-white" href="?page=<?php echo $page + 1; ?>">Next</a></li>
+  </ul>
+</section>
 
-    <?php include("footer.php"); ?>
+
+<?php include("footer.php"); ?>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -16,36 +16,8 @@ include_once("mysqli_connect.php");
 </head>
 
 <body id="bg1">
+<?php include("navbar_backoffice.php"); ?>
   
-<nav class="navbar navbar-expand-xxl p-0 navbar-light bg-white shadow ">
-    <div class="container-fluid ">
-      <a class="navbar-brand mx-0" href="./index.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
-      <a href="resto_backoffice.php"><h1 class="text-warning text-center  mb-5">Back Office</h1></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between " id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./index.php">Accueil <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./menu.php">Menu</a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./photos.php">Photos</a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./apropos.php">A propos</a>
-          </li>
-          <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./contact.php">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <div class="container my-1 bg-white">
 
     <div class="accordion" id="accordionExample">
@@ -155,7 +127,7 @@ include_once("mysqli_connect.php");
           <input type="text" id="prix" name="prix" class="w-100" required>
           </div>
           </div>
-          <input type="submit" name="ajouter" value="ajouter" class="btn btn-light">
+          <input type="submit" name="ajouter" value="Ajouter" class="btn btn-light">
         </form>
         </div>
 
@@ -224,6 +196,7 @@ include_once("mysqli_connect.php");
             <th scope="col">Nom du fichier</th>
             <th scope="col">Légende</th>
             <th scope="col">Aperçu</th>
+            <th scope="col">Ajouter</th>
             <th scope="col">Supprimer</th>
           </tr>
         </thead>
@@ -242,6 +215,7 @@ include_once("mysqli_connect.php");
             echo "<td>". $row['FILE']. "</td>";
             echo "<td>" . $row['file_name']. "</td>";
             echo "<td><a href='" . $row["file_path"]. "' target='_blank'><img src='upload/".$row['FILE']."' width='80' height='80'></a></td>";
+            echo "<td><a href='pg2_photo.php?id=".$row['id']."&table=galerie&action=add' class='btn btn-primary'>Ajouter</a></td>";
             echo "<td><a href='delete.php?id=".$row['id']."&table=galerie' class='btn btn-danger'>X</a></td>";
             echo "</tr>";
           }
