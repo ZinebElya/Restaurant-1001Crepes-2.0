@@ -183,7 +183,7 @@ include_once("mysqli_connect.php");
             <label for="file"></label>
             <input type="file" id="file" name="file" class=" w-100">
             </div>
-          <button type="submit" class="btn btn-light" name="upload">Télécharger</button>
+          <button type="submit" class="btn btn-light" name="upload">Ajouter</button>
         </form>
       </div>
 
@@ -196,7 +196,6 @@ include_once("mysqli_connect.php");
             <th scope="col">Nom du fichier</th>
             <th scope="col">Légende</th>
             <th scope="col">Aperçu</th>
-            <th scope="col">Ajouter</th>
             <th scope="col">Supprimer</th>
           </tr>
         </thead>
@@ -215,7 +214,6 @@ include_once("mysqli_connect.php");
             echo "<td>". $row['FILE']. "</td>";
             echo "<td>" . $row['file_name']. "</td>";
             echo "<td><a href='" . $row["file_path"]. "' target='_blank'><img src='upload/".$row['FILE']."' width='80' height='80'></a></td>";
-            echo "<td><a href='pg2_photo.php?id=".$row['id']."&table=galerie&action=add' class='btn btn-primary'>Ajouter</a></td>";
             echo "<td><a href='delete.php?id=".$row['id']."&table=galerie' class='btn btn-danger'>X</a></td>";
             echo "</tr>";
           }
