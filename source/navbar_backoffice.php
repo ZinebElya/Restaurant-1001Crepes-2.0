@@ -14,7 +14,7 @@
 <body id="bg1">
 
 <nav class="navbar navbar-expand-xxl p-0 navbar-light bg-white shadow ">
-    <div class="container-fluid ">
+    <div class="container-fluid align-items-baseline">
       <a class="navbar-brand mx-0" href="./backoffice.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
       <a href="backoffice.php"><h1 class="text-warning text-center  mb-5">Back Office</h1></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,9 +38,13 @@
             <a class="nav-link text-warning" href="./contact.php">Contact</a>
           </li>
           <li class="nav-item mx-lg-5 font-weight-bold">
-            <a class="nav-link text-warning" href="./resto_backoffice.php">Back Office</a>
+            <a class="nav-link text-warning" href="./backoffice.php">Back Office</a>
           </li>
+          <li class="nav-item mx-lg-5 font-weight-bold">
+          <a class="nav-link text-danger" href="logout.php">Logout</a>
+        </li>
         </ul>
       </div>
     </div>
+    
   </nav>
