@@ -1,7 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Back Office</title>
+</head>
+
+<body id="bg1">
+
 <nav class="navbar navbar-expand-xxl p-0 navbar-light bg-white shadow ">
     <div class="container-fluid ">
-      <a class="navbar-brand mx-0" href="./index.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
-      <a href="resto_backoffice.php"><h1 class="text-warning text-center  mb-5">Back Office</h1></a>
+      <a class="navbar-brand mx-0" href="./backoffice.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
+      <a href="backoffice.php"><h1 class="text-warning text-center  mb-5">Back Office</h1></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

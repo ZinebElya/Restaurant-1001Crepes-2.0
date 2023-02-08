@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mysqli->query("UPDATE menu SET categorie='$categorie', nom_produit='$nom_produit', prix='$prix' WHERE id=$id");
        
    
-    header("Location: resto_backoffice.php");
+    header("Location: backoffice.php");
   }
 
 ?>
