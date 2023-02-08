@@ -16,7 +16,7 @@ $stmt->bind_param("i", $id);
 $stmt->execute();
 
 // Redirection vers la page précédente
-header("Location: resto_backoffice.php");
+header("Location: backoffice.php");
 
 ?>
 

@@ -13,9 +13,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $statement->bind_param('sss', $categorie, $nom_produit, $prix);
    
     if($statement->execute()){
-      echo "Produit ajouté au menu";
-        }else{
+      include("navbar_backoffice.php");
+      echo "
+<div class='container my-5 w-50'>
+<div class='card m-5 p-5'>
+<div class='card-body m5 p-5 font-weight-bold'>
+  <p class='card-text text-center'> Produit ajouté au menu</p>
+</div>
+</div>
+</div>
+";
+      }else{
             print $mysqli->error; 
-        } 
+      } 
   }
 ?>

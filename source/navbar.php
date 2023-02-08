@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-md p-0 navbar-light bg-white shadow sticky-top">
     <div class="container-fluid ">
-      <a class="navbar-brand mx-0" href="./resto_backoffice.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
+      <a class="navbar-brand mx-0" href="./backoffice.php"> <img src="./images/logo 1001crepes.png" width="100" height="100" alt="logo crepes"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

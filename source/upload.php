@@ -29,13 +29,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Vérification de la réussite de la requête d'insertion
         if ($stmt->affected_rows > 0) {
-            echo "L'image a été téléchargée avec succès.";
-            echo "<br><a href='" . $file_path . "' target='_blank'>Aperçu</a>";
+            include("navbar_backoffice.php");
+            echo "
+  <div class='container my-5 w-50'>
+    <div class='card m-5 p-5'>
+      <div class='card-body m5 p-5 font-weight-bold'>
+        <p class='card-text text-center'> L'image a été téléchargée avec succès. <br>
+        <a href='" . $file_path . "' target='_blank'>Aperçu</a></p>
+      </div>
+    </div>
+  </div>
+";
         } else {
-            echo "Une erreur est survenue lors de l'insertion des données.";
+            include("navbar_backoffice.php");
+            echo "
+  <div class='container my-5 w-50'>
+    <div class='card m-5 p-5'>
+      <div class='card-body m5 p-5 font-weight-bold'>
+        <p class='card-text text-center'> Une erreur est survenue lors de l'insertion des données.</p>
+      </div>
+    </div>
+  </div>
+";
         }
     } else {
-        echo "Une erreur est survenue lors du téléchargement de l'image.";
+        echo "
+  <div class='container my-5 w-50'>
+    <div class='card m-5 p-5'>
+      <div class='card-body m5 p-5 font-weight-bold'>
+        <p class='card-text text-center'> Une erreur est survenue lors du téléchargement de l'image..</p>
+      </div>
+    </div>
+  </div>
+";
     }
 }
 ?>
