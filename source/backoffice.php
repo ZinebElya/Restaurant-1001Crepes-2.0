@@ -1,7 +1,15 @@
 <?php
-include_once("mysqli_connect.php"); 
+session_start();
+
+if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] !== true) {
+  header('Location: login.php');
+  exit;
+}
+
 ?>
-<?php include("navbar_backoffice.php"); ?>
+
+<?php include_once("mysqli_connect.php"); 
+include("navbar_backoffice.php"); ?>
   
   <div class="container my-1 bg-white">
 
