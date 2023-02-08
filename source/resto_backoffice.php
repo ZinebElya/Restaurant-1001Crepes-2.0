@@ -155,7 +155,7 @@ include_once("mysqli_connect.php");
           <input type="text" id="prix" name="prix" class="w-100" required>
           </div>
           </div>
-          <input type="submit" name="ajouter" value="Ajouter" class="btn btn-light">
+          <input type="submit" name="ajouter" value="ajouter" class="btn btn-light">
         </form>
         </div>
 
@@ -184,7 +184,7 @@ include_once("mysqli_connect.php");
           echo "<td>". $row['categorie']. "</td>";
           echo "<td>". $row['nom_produit']. "</td>";
           echo "<td>" . $row['prix']. "</td>";
-          echo "<td></td>";
+          echo "<td><a href='modif_menu.php?id=".$row['id']."&table=menu' class='btn btn-primary'>Modifier</a></td>";
           echo "<td><a href='delete.php?id=".$row['id']."&table=menu' class='btn btn-danger'>X</a></td>";
           echo "</tr>";
         }        
