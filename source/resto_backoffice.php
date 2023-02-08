@@ -130,10 +130,10 @@ include_once("mysqli_connect.php");
           </div>
           <div class="form-group col-md-8">
             <select class="form-select w-100" id="categorie" name="categorie" aria-label="select option">
-                <option value='crepes-salees'>Crêpes salées</option>
-                <option value='crepes-sucrees'>Crêpes sucrées</option>
-                <option value='milk-shakes'>Milk-shakes </option>
-                <option value='boissons-chaudes'>Boissons chaudes</option>
+                <option value='Crêpes salées'>Crêpes salées</option>
+                <option value='Crêpes sucrées'>Crêpes sucrées</option>
+                <option value='Milk-shakes'>Milk-shakes </option>
+                <option value='Boissons chaudes'>Boissons chaudes</option>
             </select>
           </div>
         </div>
@@ -155,7 +155,7 @@ include_once("mysqli_connect.php");
           <input type="text" id="prix" name="prix" class="w-100" required>
           </div>
           </div>
-          <input type="submit" name="ajouter" value="Ajouter" class="btn btn-light">
+          <input type="submit" name="ajouter" value="ajouter" class="btn btn-light">
         </form>
         </div>
 
@@ -184,7 +184,7 @@ include_once("mysqli_connect.php");
           echo "<td>". $row['categorie']. "</td>";
           echo "<td>". $row['nom_produit']. "</td>";
           echo "<td>" . $row['prix']. "</td>";
-          echo "<td></td>";
+          echo "<td><a href='modif_menu.php?id=".$row['id']."&table=menu' class='btn btn-primary'>Modifier</a></td>";
           echo "<td><a href='delete.php?id=".$row['id']."&table=menu' class='btn btn-danger'>X</a></td>";
           echo "</tr>";
         }        

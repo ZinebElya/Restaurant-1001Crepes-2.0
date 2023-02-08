@@ -163,7 +163,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `menu` (
   `id` int(11) NOT NULL,
-  `categorie` enum('crepes-salees','crepes-sucrees','milk-shakes','boissons-chaudes') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categorie` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nom_produit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prix` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
