@@ -19,7 +19,7 @@
 
   <div class="container my-5">
 
-    <h1 class="bg-warning text-white text-center"> LE MENU </h1>
+    <h1 class="bg-warning text-white text-center my-5"> LE MENU </h1>
 
     <div class="accordion my-5" id="accordionExample">
   

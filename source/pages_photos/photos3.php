@@ -37,24 +37,16 @@
   
     <section>
           <ul class="pagination justify-content-center my-5">
-            <li class="page-item"><a class="page-link border border-warning bg-warning text-white" href="./photos2.html">Previous</a></li>
-            <li class="page-item "><a class="page-link border border-warning text-warning " href="./photos.html">1</a></li>
-            <li class="page-item "><a class="page-link border border-warning text-warning" href="./photos2.html">2</a></li>
-            <li class="page-item active"><a class="page-link border border-warning  text-warning" href="./photos3.html">3</a></li>
-            <li class="page-item"><a class="page-link border border-warning  text-warning" href="./photos4.html">4</a></li>
-            <li class="page-item"><a class="page-link border border-warning bg-warning text-white" href="./photos4.html">Next</a></li>
+            <li class="page-item"><a class="page-link border border-warning bg-warning text-white" href="./photos2.php">Previous</a></li>
+            <li class="page-item "><a class="page-link border border-warning text-warning " href="./photos.php">1</a></li>
+            <li class="page-item "><a class="page-link border border-warning text-warning" href="./photos2.php">2</a></li>
+            <li class="page-item active"><a class="page-link border border-warning  text-warning" href="./photos3.php">3</a></li>
+            <li class="page-item"><a class="page-link border border-warning  text-warning" href="./photos4.php">4</a></li>
+            <li class="page-item"><a class="page-link border border-warning bg-warning text-white" href="./photos4.php">Next</a></li>
           </ul>
     </section>
 
-  <footer class="card-footer bg-light">
-    <div class="container-fluid">
-      <div class="d-flex  mx-1">
-        <div class="p-2 flex-grow-1"><i class="fa-regular fa-copyright"></i><small> Copyright - 1001Crêpes</small></div>
-        <div class="p-2 "><a class="nav-item nav-link text-dark "  href="#"><i class="fa-brands fa-facebook"></i></a></div>
-        <div class="p-2 "><a class="nav-item nav-link text-dark" href="#"><i class="fa-brands fa-instagram"></i></a></div>
-      </div>
-    </div>
-  </footer>
+    <?php include("footer.php"); ?>
  
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

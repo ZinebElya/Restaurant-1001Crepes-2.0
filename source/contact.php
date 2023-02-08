@@ -21,7 +21,7 @@
     <h1 class="bg-warning text-white text-center mb-5"> CONTACT</h1>
         
       <div class="border rounded border-warning p-5">
-        <form action="submit_form.php" method="POST" >
+        <form action="sbmit_message.php" method="POST" >
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="prenom" class="text-warning font-weight-bold">Prénom</label>
